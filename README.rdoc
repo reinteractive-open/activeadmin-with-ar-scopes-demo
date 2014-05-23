@@ -1,0 +1,8 @@
+A simple example application to demonstrate using ActiveRecord scopes with activeadmin.
+
+```
+rake db:migrate
+rake db:seed
+```
+
+Visit '/admin/organisations'

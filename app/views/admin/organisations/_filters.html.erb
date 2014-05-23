@@ -1,0 +1,18 @@
+<%= semantic_form_for :admin_organisations, url: admin_organisations_path, method: :get, html: { class: 'filter_form' } do |f| %>
+  <%= hidden_field_tag 'q', true %>
+  <div class="filter_form_field filter_string select_and_search">
+    <%= f.label 'name' %>
+    <%= f.select 'name_operator', options_for_select(['Contains']) %>
+    <%= f.text_field 'name', value: @filter_params[:name] %>
+  </div>
+  <div class="filter_form_field filter_string select_and_search">
+    <%= f.label 'address' %>
+    <%= f.select 'address_operator', options_for_select(['Contains']) %>
+    <%= f.text_field 'address', value: @filter_params[:address] %>
+  </div>
+  <div class="buttons">
+    <%= f.submit 'Filter' %>
+    <%= link_to 'Clear Filters', admin_organisations_path %>
+    <%= hidden_field_tag 'order', params[:order] %>
+  </div>
+<% end %>
